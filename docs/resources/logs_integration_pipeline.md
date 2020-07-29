@@ -23,10 +23,10 @@ resource "datadog_logs_integration_pipeline" "python" {
 
 ## Argument Reference
 
-* `is_enabled` - (Required) Boolean value to enable your pipeline.
+- `is_enabled` - (Required) Boolean value to enable your pipeline.
 
 `is_enabled` is the only value that can be modified for integration pipeline.
 
 ## Import
 
-```terraform import <resource.name> <pipelineID>```
+`terraform import <resource.name> <pipelineID>`

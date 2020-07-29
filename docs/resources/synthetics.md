@@ -135,7 +135,7 @@ The following arguments are supported:
     - `jsonpath` - (Required) The JSON path to assert
   - `property` - (Optional) if assertion type is "header", this is a the header name
 - `options` - (Required)
-  - `tick_every` - (Required)  How often the test should run (in seconds). Current possible values are 900, 1800, 3600, 21600, 43200, 86400, 604800 plus 60 if type=api or 300 if type=browser
+  - `tick_every` - (Required) How often the test should run (in seconds). Current possible values are 900, 1800, 3600, 21600, 43200, 86400, 604800 plus 60 if type=api or 300 if type=browser
   - `follow_redirects` - (Optional) For type=api, true or false
   - `min_failure_duration` - (Optional) How long the test should be in failure before alerting (integer, number of seconds, max 7200). Default is 0.
   - `min_location_failed` - (Optional) Threshold below which a synthetics test is allowed to fail before sending notifications
