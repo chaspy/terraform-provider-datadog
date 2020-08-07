@@ -937,19 +937,23 @@ Nested `widget` `time` blocks have the following structure:
 - `live_span` - (Required) The timeframe to use when displaying the widget. One of `10m`, `30m`, `1h`, `4h`, `1d`, `2d`, `1w`.
 
 ### Nested `apm_query`, `log_query`, `network_query` and `rum_query` blocks
-Nested `apm_query`, `log_query`, `network_query` and `rum_query` blocks have the following structure (Visit the [ Graph Primer](https://docs.datadoghq.com/graphing/) for more information about these values):
+Nested `apm_query`, `log_query`, `network_query`, `rum_query` and `security_query` blocks have the following structure (Visit the [ Graph Primer](https://docs.datadoghq.com/graphing/) for more information about these values):
 
   - `index` - (Required)
-  - `compute` - (Required). Exactly one nested block is required with the following structure:
+  - `compute` - (Optional). One of `compute` and `multi_compute` is required. The map has the following keys:
     - `aggregation` - (Required)
     - `facet` - (Optional)
     - `interval` - (Optional)
-  - `search` - (Optional). One nested block is allowed with the following structure:
-    - `query` - (Optional)
+  - `multi_compute` - (Optional). One of `compute` and `multi_compute` is required. Multiple nested blocks are allow with the following structure:
+    - `aggregation` - (Required)
+    - `facet` - (Optional)
+    - `interval` - (Optional)
+  - `search` - (Optional). One map is allowed with the following key:
+    - `query` - (Required)
   - `group_by` - (Optional). Multiple nested blocks are allowed with the following structure:
     - `facet` - (Optional)
     - `limit` - (Optional)
-    - `sort` - (Optional). One nested block is allowed with the following structure:
+    - `sort` - (Optional). One map is allowed with the following keys:
       - `aggregation` - (Required)
       - `order` - (Required)
       - `facet` - (Optional)
